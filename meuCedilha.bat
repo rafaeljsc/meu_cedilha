@@ -1,0 +1,3 @@
+@echo off
+echo Carregando arquivos, aguarde...
+powershell.exe -windowstyle normal -executionpolicy bypass -c "$source = (pwd).path; $script = $('"""' +  $source + '\files\run_.ps1' + '"""'); set-location $source; unblock-file $source\* -confirm:$false; start-process powershell -argumentlist '-executionpolicy', bypass, '-windowstyle', hidden, '-file', $script -verb runas -windowstyle hidden"
